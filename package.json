@@ -1,0 +1,26 @@
+{
+  "name": "uts-ethiopian-michael",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tngmichael/uts-ethiopian-michael.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tngmichael/uts-ethiopian-michael/issues"
+  },
+  "homepage": "https://github.com/tngmichael/uts-ethiopian-michael#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.3",
+    "morgan": "^1.8.1"
+  }
+}
