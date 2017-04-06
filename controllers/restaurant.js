@@ -59,7 +59,7 @@ methods.deleteOne = function(req, res) {
 }
 
 methods.upsertOne = function(req, res) {
-  Restaurant.findByIdAndUpdate(req.params.id, { $push: req.body }, {safe: true, upsert: true, new : true})
+  Restaurant.findByIdAndUpdate(req.params.id, { $push: { menu: req.body }}, {new : true, upsert: true})
     .exec((err, data) => {
       if (err) {
         res.send(err)
