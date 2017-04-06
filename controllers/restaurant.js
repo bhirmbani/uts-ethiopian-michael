@@ -2,7 +2,8 @@ const Restaurant = require('../models/restaurant')
 const methods = {}
 
 methods.findAll = function(req, res) {
-  Restaurant.find({}, function(err, data) {
+  Restaurant.find({}).populate('menu')
+    .exec(function(err, data) {
     if (err) {
       res.send(err)
     } else {
@@ -56,5 +57,17 @@ methods.deleteOne = function(req, res) {
         }
       })
 }
+
+methods.upsertOne = function(req, res) {
+  Restaurant.findByIdAndUpdate(req.params.id, { $push: req.body }, {safe: true, upsert: true, new : true})
+    .exec((err, data) => {
+      if (err) {
+        res.send(err)
+      } else {
+        res.json(data)
+      }
+    })
+}
+
 
 module.exports = methods

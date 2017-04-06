@@ -5,7 +5,8 @@ const restaurantSchema = new Schema({
   name:        String,
   owner:       String,
   address:     String,
-  open_status: Number
+  open_status: Number,
+  menu:        [{ type: Schema.Types.ObjectId, ref: 'Food' }]
 })
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema)
